@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <center>
+            <h1>Decimal Converter</h1>
+        </center>
+    </head>
+    <body>
+        <script>
+            function convert(){
+                var num = document.getElementById("num").value;
+                var base = document.getElementById("base").value;
+                var result = 0;
+                var ans = document.getElementById("ans");
+                var mul = 1;
+                while(num > 0){
+                    result = result + (num % base) * mul;
+                    mul = mul * 10;
+                    num = Math.floor(num / base);  
+                }
+                ans.innerText = "Ans: " + result;
+                console.log(result);
+            }
+        </script>
+        <h3>Enter the number: <input type="text" id="num" name="num" placeholder="Enter the number"></h5>
+        <h3>Enter the Base to Convert: <input type="text" id="base" name="base" placeholder="Enter the base" required></h3>
+        <button onclick="convert()">Convert</button>
+        <p id = "ans" style="font-weight: bolder;">Ans: </p>
+    </body> 
+</html>
